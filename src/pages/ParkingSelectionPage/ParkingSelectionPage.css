@@ -1,0 +1,197 @@
+/* ParkingSelectionPage.css */
+
+/* Reset */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #cfd6e1, #2c87ef); /* Vibrant gradient */
+  color: white;
+  height: 100vh; /* Ensure full screen height */
+  overflow: hidden;
+}
+
+h3 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Main layout container */
+.parking-layout {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px; /* Adjust the width of the sidebar */
+  background-color: #a3cee8;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 20px 0;
+  position: fixed; /* Fix the sidebar to the left */
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.sidebar-content {
+  width: 80%;
+  text-align: center;
+}
+
+.sidebar h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.vehicle-selection {
+  margin-bottom: 30px;
+}
+
+.floor-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  gap: 15px;
+}
+
+button {
+  padding: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(145deg, #ff6600, #ff4500); /* Gradient buttons */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, opacity 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.95;
+}
+
+/* Parking map - Grid layout */
+.parking-area {
+  margin-left: 240px; /* Start right next to the sidebar */
+  padding: 20px 40px; /* Add spacing */
+  overflow-y: auto; /* Enable scrolling for tall layouts */
+  flex: 1; /* Stretch to take remaining width */
+}
+
+/* Default parking grid with fixed 10 columns */
+.parking-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 10 columns */
+  gap: 10px;
+}
+
+/* Parking slot styles */
+.slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 12px;
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+/* Bike parking */
+.bike-slot {
+  width: 60px;
+  height: 60px;
+}
+
+.bike-slot.available {
+  background: linear-gradient(145deg, #ffffff, #d1f7d6, #b1ebb5); /* White to light green */
+  color: #003566;
+  cursor: pointer;
+}
+
+.bike-slot.available:hover {
+  transform: scale(1.1);
+}
+
+.bike-slot.reserved {
+  background: linear-gradient(145deg, #ff4d4d, #ff7979); /* Red gradient */
+  color: white;
+  cursor: not-allowed;
+}
+
+.bike-slot.inactive {
+  background: lightgray;
+  color: gray;
+  cursor: not-allowed;
+}
+
+/* Car parking */
+.car-slot {
+  width: 80px;
+  height: 80px;
+}
+
+.car-slot.available {
+  background: linear-gradient(145deg, #ffffff, #dff4ff); /* White to light blue */
+  color: #003566;
+  cursor: pointer;
+}
+
+.car-slot.available:hover {
+  transform: scale(1.1);
+}
+
+.car-slot.reserved {
+  background: linear-gradient(145deg, #ff4d4d, #ff7979); /* Red gradient */
+  color: white;
+  cursor: not-allowed;
+}
+
+.car-slot.inactive {
+  background: lightgray;
+  color: gray;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .parking-layout {
+    flex-direction: column; /* Stack layout for small screens */
+  }
+
+  .sidebar {
+    width: 100%; /* Sidebar takes full width */
+    position: relative; /* Responsive adjustment */
+  }
+
+  .parking-area {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .parking-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 slots per row for smaller screens */
+  }
+
+  .slot {
+    font-size: 10px;
+  }
+
+  .bike-slot {
+    width: 50px;
+    height: 50px;
+  }
+
+  .car-slot {
+    width: 70px;
+    height: 70px;
+  }
+}

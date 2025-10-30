@@ -1,0 +1,16 @@
+.floor-map-container {
+  text-align: center;
+  color: white;
+  background-color: #1e1e1e;
+  min-height: 100vh;
+}
+
+.floor-card:hover {
+  transform: scale(1.05);
+  transition: 0.2s ease;
+}
+
+.popup button:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+}

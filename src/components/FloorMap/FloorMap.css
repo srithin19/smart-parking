@@ -1,0 +1,64 @@
+/* Parking Grid Styles */
+.parking-grid {
+  display: grid;
+  grid-gap: 10px; /* Space between grid items */
+  justify-items: center;
+  align-items: center;
+}
+
+/* Bike parking grid with 10x3 layout */
+.bike-grid {
+  grid-template-columns: repeat(10, 1fr); /* 10 columns for bikes */
+  grid-template-rows: repeat(3, 1fr); /* 3 rows for bikes */
+}
+
+/* Car parking grid with 10x10 layout */
+.car-grid {
+  grid-template-columns: repeat(10, 1fr); /* 10 columns for cars */
+  grid-template-rows: repeat(10, 1fr); /* 10 rows for cars */
+}
+
+/* Parking slots */
+.slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px; /* Visible font size */
+  font-weight: bold;
+  color: black; /* Dark text for contrast */
+  border-radius: 5px;
+  transition: transform 0.2s ease;
+  padding: 10px; /* Padding within the slot */
+}
+
+/* Available parking space */
+.available {
+  background-color: #ffffff; /* White background for available slots */
+  border: 1px solid #b0b0b0; /* Slight border for clarity */
+  cursor: pointer;
+}
+
+.available:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Reserved parking space */
+.reserved {
+  background-color: #ff4d4d; /* Red background for reserved slots */
+  border: 1px solid #990000; /* Slight border for emphasis */
+  color: white; /* White text for reserved parking */
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .parking-grid {
+    grid-gap: 5px; /* Reduce spacing for smaller screens */
+  }
+
+  .slot {
+    padding: 8px; /* Smaller padding for slots */
+    font-size: 12px; /* Smaller font size */
+  }
+}
