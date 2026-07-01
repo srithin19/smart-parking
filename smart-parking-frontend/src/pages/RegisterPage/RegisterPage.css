@@ -1,0 +1,120 @@
+/* RegisterPage.css */
+
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  padding: 20px;
+}
+
+.register-container {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+  padding: 48px 40px;
+  max-width: 480px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.register-container h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.register-container > p {
+  color: #94a3b8;
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+
+.form-group {
+  margin: 20px 0;
+  text-align: left;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #cbd5e1;
+  display: block;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 2px solid rgba(71, 85, 105, 0.5);
+  outline: none;
+  font-size: 16px;
+  background: rgba(15, 23, 42, 0.5);
+  color: #f1f5f9;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  background: rgba(15, 23, 42, 0.8);
+}
+
+input::placeholder {
+  color: #64748b;
+}
+
+.register-button {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  margin: 24px 0 16px 0;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.register-button:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.register-button:active {
+  transform: translateY(0);
+}
+
+.login-prompt {
+  margin-top: 24px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.login-link {
+  color: #60a5fa;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.login-link:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}

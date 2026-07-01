@@ -1,0 +1,317 @@
+/* ParkingSelectionPage.css */
+
+/* Main layout container */
+.parking-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 32px 24px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  overflow-y: auto;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  text-align: center;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.sidebar h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Floor Info Card */
+.floor-info-card {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 28px;
+  width: 100%;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.floor-info-card h4 {
+  margin: 0 0 16px 0;
+  font-size: 15px;
+  text-align: center;
+  color: #60a5fa;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.floor-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.floor-detail-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 8px 12px;
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 8px;
+  border-left: 3px solid #3b82f6;
+}
+
+.floor-detail-item strong {
+  color: #93c5fd;
+  font-weight: 600;
+}
+
+.floor-detail-item span {
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+/* Info Notice */
+.info-notice {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+  border: 1px solid rgba(96, 165, 250, 0.4);
+  border-radius: 12px;
+  padding: 14px;
+  margin-top: 24px;
+  width: 100%;
+}
+
+.info-notice p {
+  margin: 0;
+  font-size: 12px;
+  color: #bfdbfe;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.vehicle-selection {
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.floor-selection {
+  width: 100%;
+}
+
+/* Main parking area */
+.main-parking-area {
+  margin-left: 300px;
+  padding: 40px 48px;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);
+}
+
+.parking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.parking-header h3 {
+  color: #f1f5f9;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e2e8f0;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 12px;
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.legend-color {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.legend-color.available {
+  background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+}
+
+.legend-color.reserved {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+  }
+
+  .main-parking-area {
+    margin-left: 240px;
+    padding: 20px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .parking-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .main-parking-area {
+    margin-left: 0;
+    padding: 20px 15px;
+  }
+
+  .parking-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .parking-header h3 {
+    font-size: 24px;
+  }
+
+  .legend {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 15px;
+  }
+
+  .sidebar-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .main-parking-area {
+    padding: 15px 10px;
+  }
+  
+  .parking-header h3 {
+    font-size: 20px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+  }
+
+  .main-parking-area {
+    margin-left: 240px;
+    padding: 20px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .parking-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .main-parking-area {
+    margin-left: 0;
+    padding: 20px 15px;
+  }
+
+  .parking-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .parking-header h3 {
+    font-size: 24px;
+  }
+
+  .legend {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 15px;
+  }
+
+  .sidebar-title {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+  .main-parking-area {
+    padding: 15px 10px;
+  }
+
+  .parking-header h3 {
+    font-size: 20px;
+  }
+
+  .legend {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,548 @@
+/* Floor Plan Container */
+.floor-plan-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.floor-plan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.floor-info h4 {
+  margin: 0;
+  color: #f1f5f9;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.capacity-badge {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Floor Plan Map */
+.floor-plan-map {
+  position: relative;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 16px;
+  padding: 40px;
+  min-height: 600px;
+  border: 2px solid rgba(71, 85, 105, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  display: grid;
+  grid-template-columns: 1fr 120px 1fr;
+  grid-template-rows: auto 1fr auto 1fr auto;
+  gap: 20px;
+}
+
+/* Entry Point */
+.entry-point {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+  border-radius: 12px 12px 0 0;
+  padding: 12px;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.entry-arrow {
+  font-size: 28px;
+  line-height: 1;
+  animation: bounceDown 2s infinite;
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* Exit Point */
+.exit-point {
+  grid-column: 2;
+  grid-row: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
+  border-radius: 0 0 12px 12px;
+  padding: 12px;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.exit-arrow {
+  font-size: 28px;
+  line-height: 1;
+  animation: bounceUp 2s infinite;
+}
+
+@keyframes bounceUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Elevator */
+.elevator-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.5);
+  z-index: 10;
+  border: 2px solid rgba(167, 139, 250, 0.5);
+}
+
+.elevator-icon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+/* Center Road */
+.center-road {
+  grid-column: 2;
+  grid-row: 2 / 5;
+  background: linear-gradient(180deg, #475569 0%, #334155 100%);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+  position: relative;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.road-marking {
+  width: 6px;
+  height: 60px;
+  background: #fbbf24;
+  border-radius: 3px;
+  opacity: 0.8;
+}
+
+.road-arrow {
+  font-size: 32px;
+  color: #fbbf24;
+  animation: slideDown 2s infinite;
+}
+
+@keyframes slideDown {
+  0%, 100% { opacity: 0.5; transform: translateY(-10px); }
+  50% { opacity: 1; transform: translateY(10px); }
+}
+
+/* Bottom Road */
+.bottom-road {
+  grid-column: 1 / 4;
+  grid-row: 4;
+  background: linear-gradient(90deg, #475569 0%, #334155 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  min-height: 40px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.road-horizontal-marking {
+  width: 100%;
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    #fbbf24 0px,
+    #fbbf24 40px,
+    transparent 40px,
+    transparent 80px
+  );
+  border-radius: 3px;
+  opacity: 0.8;
+}
+
+/* Parking Bays */
+.parking-bay {
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 12px;
+  padding: 16px;
+  border: 2px dashed rgba(71, 85, 105, 0.5);
+  position: relative;
+}
+
+.left-bay {
+  grid-column: 1;
+  grid-row: 2 / 4;
+}
+
+.right-bay {
+  grid-column: 3;
+  grid-row: 2 / 4;
+}
+
+.bottom-bay {
+  grid-column: 1 / 4;
+  grid-row: 5;
+}
+
+.top-bay {
+  grid-column: 1 / 4;
+  grid-row: 1;
+  margin-bottom: 20px;
+}
+
+.bay-label {
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Parking Slots */
+.parking-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.parking-slots.horizontal {
+  grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+}
+
+.parking-slot {
+  /* Default for bikes - small rectangle */
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid #15803d;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.parking-slot:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.5);
+  z-index: 5;
+}
+
+.parking-slot.reserved {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border-color: #991b1b;
+}
+
+.parking-slot.reserved:hover {
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.5);
+}
+
+/* Car Slots - Larger rectangles */
+.parking-slot.car-slot {
+  height: 120px;
+  min-width: 80px;
+}
+
+/* Bike Slots - Smaller rectangles */
+.parking-slot.bike-slot {
+  height: 70px;
+  min-width: 50px;
+}
+
+.slot-number {
+  font-size: 11px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.slot-booked {
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+/* Loading & Error States */
+.floor-plan-loading,
+.floor-plan-error,
+.floor-plan-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: #cbd5e1;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(59, 130, 246, 0.3);
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Modal Styles - Reuse from FloorMap.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 480px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  padding: 24px 28px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 16px 16px 0 0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  padding: 28px;
+  background: white;
+}
+
+.slot-info-text {
+  margin: 10px 0;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.slot-info-text strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-top: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.modal-footer {
+  padding: 20px 28px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 0 0 16px 16px;
+}
+
+.btn-cancel,
+.btn-confirm {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+}
+
+.btn-cancel {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 2px solid #e2e8f0;
+}
+
+.btn-cancel:hover {
+  background-color: #e2e8f0;
+  border-color: #cbd5e1;
+}
+
+.btn-confirm {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-confirm:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.btn-confirm:disabled,
+.btn-cancel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .floor-plan-map {
+    padding: 30px;
+    gap: 15px;
+  }
+  
+  .center-road {
+    width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .floor-plan-map {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .left-bay, .right-bay, .bottom-bay, .top-bay {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  
+  .center-road {
+    display: none;
+  }
+  
+  .parking-slots {
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  }
+}

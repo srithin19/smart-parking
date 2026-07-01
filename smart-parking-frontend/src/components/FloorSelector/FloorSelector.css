@@ -1,0 +1,81 @@
+/* FloorSelector.css */
+
+.floor-selection {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.floor-selection h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: #cbd5e1;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.floor-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.floor-buttons button {
+  padding: 16px 20px;
+  color: #cbd5e1;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border: 2px solid rgba(148, 163, 184, 0.3);
+  border-radius: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.floor-buttons button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.floor-buttons button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.floor-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+  border-color: rgba(59, 130, 246, 0.6);
+  color: #f1f5f9;
+}
+
+.floor-buttons button.active {
+  background: linear-gradient(145deg, #3b82f6 0%, #2563eb 100%);
+  border-color: #60a5fa;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.5);
+  color: white;
+}
+
+.floor-buttons button.active:hover {
+  background: linear-gradient(145deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-2px);
+}
+
+.floor-buttons button:active {
+  transform: translateY(0);
+}
